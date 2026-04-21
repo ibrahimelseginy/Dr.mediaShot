@@ -3,6 +3,7 @@ import { Alexandria, Playfair_Display } from "next/font/google";
 import Script from 'next/script';
 import "./globals.css";
 import { LanguageProvider } from "@/lib/LanguageContext";
+import ConsentBanner from "@/components/ConsentBanner";
 
 const alexandria = Alexandria({
     subsets: ["arabic", "latin"],
@@ -227,7 +228,28 @@ export default function RootLayout({
             <body
                 className={`${alexandria.variable} ${playfair.variable} font-alexandria antialiased`}
             >
-                {/* Google Analytics */}
+                {/* 
+                    STEP 1: Consent Mode v2 — Default DENIED
+                    Must run BEFORE any GA scripts (beforeInteractive)
+                    as per Google's official Consent Mode v2 docs
+                */}
+                <Script id="consent-default" strategy="beforeInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('consent', 'default', {
+                            'ad_storage': 'denied',
+                            'ad_user_data': 'denied',
+                            'ad_personalization': 'denied',
+                            'analytics_storage': 'denied',
+                            'wait_for_update': 500,
+                        });
+                        gtag('set', 'url_passthrough', true);
+                        gtag('set', 'ads_data_redaction', true);
+                    `}
+                </Script>
+
+                {/* STEP 2: Load GA — after consent default is set */}
                 <Script
                     src="https://www.googletagmanager.com/gtag/js?id=G-HL6HS2LEM0"
                     strategy="afterInteractive"
@@ -240,8 +262,30 @@ export default function RootLayout({
                         gtag('config', 'G-HL6HS2LEM0');
                     `}
                 </Script>
+
+                {/* STEP 3: Restore consent from localStorage on every page load */}
+                <Script id="consent-restore" strategy="afterInteractive">
+                    {`
+                        (function() {
+                            var saved = localStorage.getItem('dr_mediashot_consent');
+                            if (saved === 'granted') {
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('consent', 'update', {
+                                    'ad_storage': 'granted',
+                                    'ad_user_data': 'granted',
+                                    'ad_personalization': 'granted',
+                                    'analytics_storage': 'granted',
+                                });
+                            }
+                        })();
+                    `}
+                </Script>
+
+                {/* STEP 4: App + Consent Banner */}
                 <LanguageProvider>
                     {children}
+                    <ConsentBanner />
                 </LanguageProvider>
             </body>
         </html>
