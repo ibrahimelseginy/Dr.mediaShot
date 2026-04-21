@@ -33,12 +33,10 @@ export const metadata: Metadata = {
     },
     icons: {
         icon: [
-            { url: '/logo.png' },
-            { url: '/logo.png', sizes: '32x32', type: 'image/png' },
-            { url: '/logo.png', sizes: '16x16', type: 'image/png' },
+            { url: '/favicon.svg', type: 'image/svg+xml' },
         ],
-        shortcut: '/logo.png',
-        apple: '/logo.png',
+        shortcut: '/favicon.svg',
+        apple: '/favicon-circle.png', // Keep PNG for Apple if needed
     },
     openGraph: {
         title: "Media Shot - وكالة تسويق طبي متخصصة",
