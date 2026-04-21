@@ -18,13 +18,13 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
     metadataBase: new URL('https://dr.mediashot.agency'),
     title: {
-        default: "dr.MediaShot",
-        template: "%s | dr.MediaShot"
+        default: "Dr.mediashot | للتسويق الطبي وانظمة الادارة والمتابعة",
+        template: "%s | Dr.mediashot"
     },
     description: "دكتور ميديا شوت - أفضل وكالة تسويق رقمي في الوطن العربي. متخصصون في تعزيز العلامة التجارية، إدارة السوشيال ميديا، وصناعة المحتوى الإبداعي لزيادة نمو الشركات والعيادات باستراتيجيات تسويقية فعالة.",
     keywords: ["التسويق الطبي", "dr.mediashot", "dr.media shot", "تسويق عيادات", "تسويق رقمي للأطباء", "صناعة محتوى طبي"],
-    authors: [{ name: "dr Media Shot", url: "https://dr.mediashot.agency" }],
-    creator: "dr.mediashot",
+    authors: [{ name: "Dr Media Shot", url: "https://dr.mediashot.agency" }],
+    creator: "Dr.MediaShot",
     publisher: "dr.mediashot",
     formatDetection: {
         email: false,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
         apple: '/favicon-circle.png', // Keep PNG for Apple if needed
     },
     openGraph: {
-        title: "dr.mediashot - وكالة تسويق طبي متخصصة",
+        title: "Dr.MediaShot - وكالة تسويق طبي متخصصة",
         description: "نزيد من وصولك للمرضى من خلال التسويق الرقمي الحديث للأطباء.",
         url: 'https://dr.mediashot.agency',
         siteName: 'dr.mediashot',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "dr.mediashot - التسويق الرقمي للأطباء",
+        title: "Dr.MediaShot - التسويق الرقمي للأطباء",
         description: "حلول تسويقية متكاملة لعيادتك مع Dr. Media Shot",
         images: ['/logo.png'],
     },
