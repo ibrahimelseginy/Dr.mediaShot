@@ -18,14 +18,14 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
     metadataBase: new URL('https://dr.mediashot.agency'),
     title: {
-        default: "Dr.MediaShot",
-        template: "%s | Dr.MediaShot"
+        default: "dr.MediaShot",
+        template: "%s | dr.MediaShot"
     },
-    description: "نحن وكالة Media Shot نقدم خدمات التسويق الرقمي والمحتوى الإبداعي لعيادات الأطباء في الوطن العربي. نساعدك في زيادة الحجوزات وتعزيز تواجدك الرقمي.",
-    keywords: ["التسويق الطبي", "Media Shot", "dr.mediashot", "dr.media shot", "تسويق عيادات", "تسويق رقمي للأطباء", "صناعة محتوى طبي"],
-    authors: [{ name: "Media Shot Agency", url: "https://dr.mediashot.agency" }],
-    creator: "Media Shot",
-    publisher: "Media Shot",
+    description: "دكتور ميديا شوت - أفضل وكالة تسويق رقمي في الوطن العربي. متخصصون في تعزيز العلامة التجارية، إدارة السوشيال ميديا، وصناعة المحتوى الإبداعي لزيادة نمو الشركات والعيادات باستراتيجيات تسويقية فعالة.",
+    keywords: ["التسويق الطبي", "dr.mediashot", "dr.media shot", "تسويق عيادات", "تسويق رقمي للأطباء", "صناعة محتوى طبي"],
+    authors: [{ name: "dr Media Shot", url: "https://dr.mediashot.agency" }],
+    creator: "dr.mediashot",
+    publisher: "dr.mediashot",
     formatDetection: {
         email: false,
         address: false,
@@ -39,16 +39,16 @@ export const metadata: Metadata = {
         apple: '/favicon-circle.png', // Keep PNG for Apple if needed
     },
     openGraph: {
-        title: "Media Shot - وكالة تسويق طبي متخصصة",
+        title: "dr.mediashot - وكالة تسويق طبي متخصصة",
         description: "نزيد من وصولك للمرضى من خلال التسويق الرقمي الحديث للأطباء.",
         url: 'https://dr.mediashot.agency',
-        siteName: 'Dr. Media Shot',
+        siteName: 'dr.mediashot',
         images: [
             {
                 url: '/logo.png',
                 width: 800,
                 height: 600,
-                alt: 'Media Shot Logo',
+                alt: 'dr.mediashot',
             },
         ],
         type: "website",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Media Shot - التسويق الرقمي للأطباء",
+        title: "dr.mediashot - التسويق الرقمي للأطباء",
         description: "حلول تسويقية متكاملة لعيادتك مع Dr. Media Shot",
         images: ['/logo.png'],
     },
