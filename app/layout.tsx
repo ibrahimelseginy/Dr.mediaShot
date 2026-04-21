@@ -18,7 +18,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
     metadataBase: new URL('https://dr.mediashot.agency'),
     title: {
-        default: "Dr.MediaShot | وكالة ميديا شوت",
+        default: "Dr.MediaShot",
         template: "%s | Dr.MediaShot"
     },
     description: "نحن وكالة Media Shot نقدم خدمات التسويق الرقمي والمحتوى الإبداعي لعيادات الأطباء في الوطن العربي. نساعدك في زيادة الحجوزات وتعزيز تواجدك الرقمي.",
