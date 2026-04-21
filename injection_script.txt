@@ -1,0 +1,36 @@
+setInterval(function() {
+     var headers = document.querySelectorAll('h3');
+     for(var i=0; i<headers.length; i++) {
+         if(headers[i].innerText.includes('Software Solutions') || headers[i].innerText.includes('\u0627\u0644\u0628\u0631\u0645\u062C\u064A\u0627\u062A')) {
+             var container = headers[i].parentElement.nextElementSibling;
+             if(container && !container.querySelector('.injected-links')) {
+                 var linksDiv = document.createElement('div');
+                 linksDiv.className = 'injected-links flex flex-row flex-wrap gap-4 pt-6 mt-6 border-t border-white/10 w-full justify-center lg:justify-start';
+                 
+                 var itemStyle = 'flex flex-col items-center gap-3 group w-[180px] sm:w-[200px]';
+                 var imgContainerStyle = 'overflow-hidden rounded-xl shadow-xl border border-white/10 group-hover:border-[#FFB800]/50 transition-colors w-full aspect-[16/10] flex items-center justify-center bg-[#1a0b2e]';
+                 var btnStyle = 'w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full font-bold transition-all text-sm shadow-lg';
+                 
+                 linksDiv.innerHTML = `
+                    <div class="${itemStyle}">
+                        <div class="${imgContainerStyle}">
+                            <img src="/system-preview.png" alt="System Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <a href="https://drive.google.com/file/d/14E6mHZzy9bkNf2dZaPtjezUhS4JYaUcI/view?usp=drive_link" target="_blank" style="text-decoration:none" class="${btnStyle} bg-red-600 hover:bg-red-700 text-white">
+                            <span class="text-lg">&#9654;</span> \u0641\u064A\u062F\u064A\u0648 \u0627\u0644\u0633\u064A\u0633\u062A\u0645
+                        </a>
+                    </div>
+                    <div class="${itemStyle}">
+                        <div class="${imgContainerStyle}">
+                            <img src="/website-preview.png" alt="Website Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <a href="https://lightgoldenrodyellow-lapwing-346038.hostingersite.com/" target="_blank" style="text-decoration:none" class="${btnStyle} bg-[#FFB800] hover:bg-yellow-500 text-black">
+                            <span class="text-lg">&#127760;</span> \u0631\u0627\u0628\u0637 \u0627\u0644\u0645\u0648\u0642\u0639
+                        </a>
+                    </div>
+                 `;
+                 container.appendChild(linksDiv);
+             }
+         }
+     }
+}, 1000);
