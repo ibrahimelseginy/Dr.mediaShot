@@ -87,7 +87,7 @@ export default function Header() {
                         {/* Left: Logo (Right for English) */}
                         <div className={`flex items-center ${language === 'en' ? 'order-1' : 'order-3'} slide-in-right`}>
                             <a href="#home" className="flex items-center">
-                                <img src="/logo.png" alt="Dr. Media Shot" className="h-10 md:h-16 w-auto object-contain mt-4 md:mt-8 float hover:scale-110 transition-transform duration-300 cursor-pointer" />
+                                <img src="/logo.png" alt="Dr. Media Shot" className="h-20 md:h-36 w-auto object-contain mt-4 md:mt-8 float hover:scale-110 transition-transform duration-300 cursor-pointer" />
                             </a>
                         </div>
 
